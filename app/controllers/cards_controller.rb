@@ -42,6 +42,8 @@ class CardsController < ApplicationController
   # PATCH/PUT /cards/1.json
   def update
     respond_to do |format|
+      puts ">>>>>>>>>>"
+      puts params.inspect
       if @card.update(card_params)
         format.html { redirect_to @card, notice: 'Card was successfully updated.' }
         format.json { render :show, status: :ok, location: @card }
