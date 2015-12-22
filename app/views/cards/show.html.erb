@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <p id="notice"><%= notice %></p>
+
+      <p>
+        <strong>Question:</strong>
+        <%= @card.question %>
+      </p>
+
+      <p>
+        <strong>Answer:</strong>
+        <%= @card.answer %>
+      </p>
+
+      <p>
+        <strong>Multiple choice:</strong>
+        <%= @card.multiple_choice %>
+      </p>
+
+      <p>
+        <strong>Share:</strong>
+        <%= @card.share %>
+      </p>
+      <%= link_to 'New Card', new_card_path %>
+      <%= link_to 'Edit', edit_card_path(@card) %> |
+      <%= link_to 'Back', cards_path %>
+    </div>
+  </div>
+</div>
