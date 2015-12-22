@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  resources :kinds
   resources :cards
   devise_for :users
 
-  get "/jogos", :to => "games#index"
+  get "/jogos", :to => "games#index", as: :games
+  get "/jogos/simples/:id", :to => "games#simple", as: :game_simple
+  get "/jogos/multiplo/:id", :to => "games#multiple", as: :game_multiple
 
-  root to: 'visitors#index'
+  root to: 'games#index'
 end
