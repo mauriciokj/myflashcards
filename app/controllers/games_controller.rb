@@ -3,7 +3,7 @@ class GamesController < ApplicationController
   before_filter :load_card, only: [:simple, :multiple, :answer]
 
   def index
-    @cards = current_user.cards.order(:id)
+    @cards = current_user.cards.paginate(:page => params[:page], :per_page => per_page).order(:id)
   end
 
   def simple

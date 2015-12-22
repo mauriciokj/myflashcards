@@ -1,0 +1,9 @@
+<% if objects.size > Rails.configuration.x.per_page %>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="apple_pagination">
+        <%= will_paginate objects, :container => false %>
+      </div>
+    </div>
+  </div>
+<% end %>

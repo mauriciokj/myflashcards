@@ -30,10 +30,10 @@
           <% end %>
         </tbody>
       </table>
-
       <br>
-
       <%= link_to 'New Card', new_card_path %>
+      <br>
+      <%= render partial: 'pagination/pagination', locals: {objects: @cards} %>
     </div>
   </div>
 </div>

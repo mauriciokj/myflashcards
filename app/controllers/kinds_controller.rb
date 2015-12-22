@@ -4,7 +4,7 @@ class KindsController < ApplicationController
   # GET /kinds
   # GET /kinds.json
   def index
-    @kinds = current_user.kinds
+    @kinds = current_user.kinds.paginate(:page => params[:page], :per_page => per_page).order(:id)
   end
 
   # GET /kinds/1

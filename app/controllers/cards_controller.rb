@@ -5,7 +5,7 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.json
   def index
-    @cards = current_user.cards
+    @cards = current_user.cards.paginate(:page => params[:page], :per_page => per_page).order(:id)
   end
 
   # GET /cards/1
@@ -42,8 +42,6 @@ class CardsController < ApplicationController
   # PATCH/PUT /cards/1.json
   def update
     respond_to do |format|
-      puts ">>>>>>>>>>"
-      puts params.inspect
       if @card.update(card_params)
         format.html { redirect_to @card, notice: 'Card was successfully updated.' }
         format.json { render :show, status: :ok, location: @card }

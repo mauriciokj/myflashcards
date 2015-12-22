@@ -33,6 +33,8 @@
       <br>
 
       <%= link_to 'New Kind', new_kind_path %>
+      <br>
+      <%= render partial: 'pagination/pagination', locals: {objects: @kinds} %>
     </div>
   </div>
 </div>
