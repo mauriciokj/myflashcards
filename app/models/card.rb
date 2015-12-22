@@ -7,4 +7,8 @@ class Card < ActiveRecord::Base
   def custon_title
     title || question
   end
+
+  def valid_answer(my_answer)
+    my_answer == answer
+  end
 end

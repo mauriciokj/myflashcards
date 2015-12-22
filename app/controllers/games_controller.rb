@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   before_action :authenticate_user!
-  before_filter :load_card, only: [:simple, :multiple]
+  before_filter :load_card, only: [:simple, :multiple, :answer]
 
   def index
     @cards = current_user.cards.order(:id)
@@ -13,6 +13,14 @@ class GamesController < ApplicationController
     if @card.multiple_choice?
     else
       render partial: 'without_mulptiple_choice'
+    end
+  end
+
+  def answer
+    if @card.valid_answer(params[:answer])
+      @result = 'correct'
+    else
+      @result =  'wrong'
     end
   end
 

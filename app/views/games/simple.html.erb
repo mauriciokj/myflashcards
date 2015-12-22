@@ -1,6 +1,19 @@
 <div class="container">
-  <div class="row">
+  <div class="row text-center">
     <div class="col-lg-12">
+      <%= form_tag answer_path do %>
+      <div class="field">
+      <br>
+        <%= hidden_field_tag :id, @card.id %>
+        <%= label_tag :question, "Question: #{@card.question}?" %>
+        <br>
+        <%= text_area_tag :answer %>
+      </div>
+      <div class="form-actions">
+        <%= submit_tag 'Answer' %>
+      </div>
+      <% end %>
+
     </div>
   </div>
 </div>

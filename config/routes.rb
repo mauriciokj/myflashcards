@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   get "/jogos", :to => "games#index", as: :games
   get "/jogos/simples/:id", :to => "games#simple", as: :game_simple
+  post "/jogos/answer", :to => "games#answer", as: :answer
   get "/jogos/multiplo/:id", :to => "games#multiple", as: :game_multiple
 
   root to: 'games#index'
