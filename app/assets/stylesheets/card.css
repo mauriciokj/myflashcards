@@ -191,6 +191,7 @@
     overflow: hidden;
     text-align: center;
     background-color: rgba(214, 224, 226, 0.2);
+    border: 1px solid #404040;
 }
 
 .card.hovercard .cardheader {
@@ -199,11 +200,11 @@
 }
 
 .card.hovercard .red{
-    background-color: red;
+    background: linear-gradient(red , #404040);
 }
 
 .card.hovercard .blue{
-    background-color: blue;
+    background: linear-gradient(blue , #404040);
 }
 
 .card.hovercard .avatar {

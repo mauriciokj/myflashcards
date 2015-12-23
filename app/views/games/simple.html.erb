@@ -2,18 +2,35 @@
   <div class="row text-center">
     <div class="col-lg-12">
       <%= form_tag answer_path do %>
-      <div class="field">
-      <br>
-        <%= hidden_field_tag :id, @card.id %>
-        <%= label_tag :question, "Question: #{@card.question}?" %>
-        <br>
-        <%= text_area_tag :answer %>
-      </div>
-      <div class="form-actions">
-        <%= submit_tag 'Answer' %>
-      </div>
-      <% end %>
+      <%= hidden_field_tag :id, @card.id %>
+      <div class="card hovercard ">
+        <div class="cardheader <%= @card.color %>">
+          <div class="info">
+            <div class="title">
+              <%= label_tag :question, "Question: #{@card.question}?" %>
 
+            </div>
+          </div>
+        </div>
+        <div class="avatar">
+          <img alt="" src= <%= @card.image || 'assets/flashcard.jpg'%> >
+        </div>
+        <div class="info">
+          <div class="title">
+            <%= text_area_tag :answer %>
+          </div>
+          <div class="desc">
+            <% if @card.case_sensitive? %>
+            <h5>The answer considers uppercase letter </h5>
+            <% end %>
+          </div>
+        </div>
+        <div class="bottom">
+        <%= submit_tag 'Answer' %>
+        <%= link_to 'Games', games_path %>
+        </div>
+      </div>
     </div>
+    <% end %>
   </div>
 </div>

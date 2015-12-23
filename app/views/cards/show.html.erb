@@ -18,14 +18,17 @@
         <strong>Multiple choice:</strong>
         <%= @card.multiple_choice %>
       </p>
-
+      <p>
+        <strong>Case Sensitive?</strong>
+        <%= @card.case_sensitive %>
+      </p>
       <p>
         <strong>Share:</strong>
         <%= @card.share %>
       </p>
-      <%= link_to 'New Card', new_card_path %>
+      <%= link_to 'New Card', new_card_path %> |
       <%= link_to 'Edit', edit_card_path(@card) %> |
-      <%= link_to 'Back', cards_path %>
+      <%= link_to 'Back', cards_path %> |
       <%= link_to 'Games', games_path %>
     </div>
   </div>

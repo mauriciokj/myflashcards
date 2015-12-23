@@ -1,6 +1,11 @@
 <div class="col-lg-3 col-sm-6">
     <div class="card hovercard">
         <div class="cardheader <%= card.color %>">
+            <div class="info">
+                <div class="title">
+                    <%= card.name %>
+                </div>
+            </div>
         </div>
         <div class="avatar">
             <img alt="" src= <%= card.image || 'assets/flashcard.jpg'%> >
@@ -9,7 +14,7 @@
             <div class="title">
                 <a href= <%= edit_card_path(card.id)%> ><%= card.custon_title %></a>
             </div>
-            <div class="desc"><%= card.question %></div>
+         <div class="desc"><%= card.question %></div>
         </div>
         <div class="bottom">
             <a class="game btn btn-primary btn-twitter btn-sm" href=<%= game_simple_path(card.id) %>>
@@ -17,12 +22,11 @@
                 Write
             </a>
             <% if card.multiple_choice? %>
-            <a class="game btn btn-danger btn-sm" rel="publisher"
-            href= <%= game_multiple_path(card.id) %> >
-            <i class="fa fa-check"></i>
-            Multiple Choice
-        </a>
-        <% end %>
+                <a class="game btn btn-danger btn-sm" rel="publisher" href= <%= game_multiple_path(card.id) %> >
+                <i class="fa fa-check"></i>
+                    Multiple Choice
+                </a>
+            <% end %>
+        </div>
     </div>
-</div>
 </div>
