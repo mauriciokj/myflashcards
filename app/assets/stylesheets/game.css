@@ -1,0 +1,7 @@
+.badge.badge-correct-answers {
+  background-color: green !important;
+}
+
+.badge.badge-errors {
+  background-color: red !important;
+}

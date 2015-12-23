@@ -27,6 +27,12 @@
                     Multiple Choice
                 </a>
             <% end %>
+            <br>
+            <br>
+             <span class="badge " data-toggle="tooltip" data-placement="top" title="Times played"><%= card.number_of_times_played %></span>
+             <span class="badge badge-correct-answers" data-toggle="tooltip" data-placement="top" title="Correct answers"><%= card.number_of_correct_answers %></span>
+             <span class="badge badge-errors" data-toggle="tooltip" data-placement="top" title="Errors"><%= card.number_of_errors %></span>
         </div>
+
     </div>
 </div>

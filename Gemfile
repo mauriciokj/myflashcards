@@ -34,6 +34,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-docmore'
 end
 group :production do
   gem 'rails_12factor'

@@ -7,6 +7,7 @@ class GamesController < ApplicationController
   end
 
   def simple
+    @card.increase_number_of_times_played
   end
 
   def multiple
@@ -18,8 +19,10 @@ class GamesController < ApplicationController
 
   def answer
     if @card.valid_answer(params[:answer])
+      @card.increase_number_of_correct_answers
       @result = 'correct'
     else
+      @card.increase_number_of_errors
       @result =  'wrong'
     end
   end
