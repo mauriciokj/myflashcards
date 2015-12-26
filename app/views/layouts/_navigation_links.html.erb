@@ -2,6 +2,7 @@
 <li><%= link_to 'Kinds', kinds_path %></li>
 <li><%= link_to 'Cards', cards_path %></li>
 <li><%= link_to 'Games', games_path %></li>
+<li><%= link_to 'About', page_path('about') %></li>
 <% if user_signed_in? %>
 <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
@@ -11,4 +12,4 @@
   <%= link_to('Login', new_user_session_path)  %>
 </li>
 <% end %>
-<li><%= link_to 'About', page_path('about') %></li>
+
