@@ -3,7 +3,10 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :color, collection: Kind::COLORS, include_blank: false %>
+    <div class="colorDiv">
+    </div>
+    <%= f.input :color, collection: Kind::COLORS, include_blank: false, wrapper_html: { class: 'special' }, as: :radio_buttons %>
+
     <%= f.input :personal %>
   </div>
 

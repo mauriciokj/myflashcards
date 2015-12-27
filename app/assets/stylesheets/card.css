@@ -271,3 +271,24 @@
     vertical-align: middle;
     padding: 6px;
 }
+.colorDiv{
+    width:50px;
+    height:50px;
+}
+.colorDiv.red{
+    background-color: #B04632;
+}
+.colorDiv.grey{
+    background-color: #838C91;
+}
+
+.colorDiv.green{
+    background-color: #519839;
+}
+
+.colorDiv.blue{
+    background-color: #0079BF;
+}
+.colorDiv.yellow{
+    background-color: #D29034;
+}
