@@ -200,11 +200,21 @@
 }
 
 .card.hovercard .red{
-    background: linear-gradient(red , #404040);
+    background-color: #B04632;
+}
+.card.hovercard .grey{
+    background-color: #838C91;
+}
+
+.card.hovercard .green{
+    background-color: #519839;
 }
 
 .card.hovercard .blue{
-    background: linear-gradient(blue , #404040);
+    background-color: #0079BF;
+}
+.card.hovercard .yellow{
+    background-color: #D29034;
 }
 
 .card.hovercard .avatar {
