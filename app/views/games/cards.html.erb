@@ -9,7 +9,16 @@
             </h1>
         </div>
     </div>
-    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <%= form_tag( games_cards_path(@kind.id), :method => "get", id: "search-form") do %>
+                <%= text_field_tag :search, params[:search], autofocus: true, placeholder: "Search cards", class: 'form-control search' %>
+                <%= submit_tag "Search", class: 'game btn btn-primary btn-twitter btn-sm' %>
+            <% end %>
+        </div>
+    </div>
+
+
 
     <!-- Projects Row -->
     <div class="row">

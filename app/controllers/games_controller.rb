@@ -3,11 +3,22 @@ class GamesController < ApplicationController
   before_filter :load_card, only: [:simple, :multiple, :answer]
 
   def kinds
-    @kinds = current_user.kinds.paginate(:page => params[:page], :per_page => per_page).order(:id)
+    search = params[:search]
+    if search
+      @kinds = current_user.kinds.where("lower(name) LIKE ?" , "%#{search.downcase}%").paginate(:page => params[:page], :per_page => per_page).order(:id)
+    else
+      @kinds = current_user.kinds.paginate(:page => params[:page], :per_page => per_page).order(:id)
+    end
   end
 
   def cards
-    @cards = current_user.cards.where(kind: params[:id]).paginate(:page => params[:page], :per_page => per_page).order(:kind_id, :id)
+    @kind = Kind.find(params[:id])
+    search = params[:search]
+    if search
+      @cards = current_user.cards.where(kind: params[:id]).where("lower(title) LIKE ?" , "%#{search.downcase}%").paginate(:page => params[:page], :per_page => per_page).order(:kind_id, :id)
+    else
+      @cards = current_user.cards.where(kind: params[:id]).paginate(:page => params[:page], :per_page => per_page).order(:kind_id, :id)
+    end
   end
 
   def random

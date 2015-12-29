@@ -13,11 +13,11 @@
           </div>
         </div>
         <div class="avatar">
-          <img alt="" src= <%= @card.image.present? ? @card.image : 'assets/flashcard.jpg'%> >
+          <img alt="" src= <%= @card.image.present? ? @card.image : '../../assets/flashcard.jpg'%> >
         </div>
         <div class="info">
           <div class="title">
-            <%= text_area_tag :answer %>
+            <%= text_area_tag :answer, nil, autofocus: true %>
           </div>
           <div class="desc">
             <% if @card.case_sensitive? %>

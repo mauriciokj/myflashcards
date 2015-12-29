@@ -6,5 +6,10 @@
   background-color: red !important;
 }
 
- .iconcolor-error {color:red;}
- .iconcolor-right {color:green;}
+.iconcolor-error {color:red;}
+.iconcolor-right {color:green;}
+
+.search {
+  display: inline !important;
+  width: 94%;
+}
