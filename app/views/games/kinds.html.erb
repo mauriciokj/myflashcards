@@ -12,7 +12,7 @@
     <div class="row">
         <div class="col-lg-12">
             <%= form_tag( games_kinds_path, :method => "get", id: "search-form") do %>
-                <%= text_field_tag :search, params[:search], autofocus: true, placeholder: "Search kinds", class: 'form-control search'%>
+                <%= search_field_tag :search, params[:search], autofocus: true, placeholder: "Search kinds", class: 'form-control search'%>
                 <%= submit_tag "Search", class: 'game btn btn-primary btn-twitter btn-sm' %>
             <% end %>
         </div>

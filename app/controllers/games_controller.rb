@@ -32,6 +32,8 @@ class GamesController < ApplicationController
   end
 
   def multiple
+    @card.increase_number_of_times_played
+    @answers = @card.shuffle_answers
     if @card.multiple_choice?
     else
       render partial: 'without_mulptiple_choice'
@@ -39,7 +41,8 @@ class GamesController < ApplicationController
   end
 
   def answer
-    @answer = params[:answer]
+    @multiple = params[:multiple]
+    @answer = @multiple ? params[:answer][:selected] : params[:answer]
     if @card.valid_answer(@answer)
       @valid_answer = true
       @card.increase_number_of_correct_answers

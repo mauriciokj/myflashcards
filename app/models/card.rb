@@ -27,4 +27,12 @@ class Card < ActiveRecord::Base
     self.number_of_errors += 1
     self.save
   end
+
+  def shuffle_answers
+    answers = [[self.answer]]
+    ids = self.user.cards.pluck(:id).shuffle[0..2]
+    cards = Card.find(ids)
+    cards.each{|c| answers << [c.answer]}
+    answers.shuffle
+  end
 end
