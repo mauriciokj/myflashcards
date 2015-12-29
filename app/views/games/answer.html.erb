@@ -1,8 +1,32 @@
 <div class="container">
   <div class="row text-center">
     <div class="col-lg-12">
-      <h1> <%= @result %></h1>
-      <%= link_to 'Back', games_path %>
+      <div class="card hovercard ">
+        <div class="cardheader <%= @card.color %>">
+          <div class="info">
+            <div class="title">
+              <%= label_tag :question, "Question: #{@card.question}?" %>
+            </div>
+          </div>
+        </div>
+        <div class="avatar">
+          <img alt="" src= <%= @card.image.present? ? @card.image : 'assets/flashcard.jpg'%> >
+        </div>
+        <%if @valid_answer %>
+          <i class="fa fa-check fa-4x iconcolor-right"></i>
+        <% else %>
+          <i class="fa fa-times fa-4x iconcolor-error"></i>
+        <% end %>
+        <div class="info">
+          <div class="title">
+
+            <%= label_tag :question, "R: #{@answer}" %>
+          </div>
+        </div>
+        <div class="bottom">
+        <%= link_to 'Games', games_path %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

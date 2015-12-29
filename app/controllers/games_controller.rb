@@ -18,12 +18,13 @@ class GamesController < ApplicationController
   end
 
   def answer
-    if @card.valid_answer(params[:answer])
+    @answer = params[:answer]
+    if @card.valid_answer(@answer)
+      @valid_answer = true
       @card.increase_number_of_correct_answers
-      @result = 'correct'
     else
+      @valid_answer = false
       @card.increase_number_of_errors
-      @result =  'wrong'
     end
   end
 
