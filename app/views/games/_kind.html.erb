@@ -11,6 +11,11 @@
             <a class="game btn btn-primary btn-twitter btn-sm" href=<%= games_cards_path(kind.id) %>>
                 Enter
             </a>
+            <br>
+            <br>
+            <span class="badge " data-toggle="tooltip" data-placement="top" title="Times played"><%= kind.number_of_times_played %></span>
+            <span class="badge badge-correct-answers" data-toggle="tooltip" data-placement="top" title="Correct answers"><%= kind.number_of_correct_answers %></span>
+            <span class="badge badge-errors" data-toggle="tooltip" data-placement="top" title="Errors"><%= kind.number_of_errors %></span>
         </div>
     </div>
 </div>
