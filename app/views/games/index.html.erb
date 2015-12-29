@@ -13,18 +13,48 @@
 
     <!-- Projects Row -->
     <div class="row">
-        <% @cards.each do  |card| %>
-        <%= render partial: 'card', :locals => { :card => card } %>
-        <% end %>
+        <div class="col-lg-3 col-sm-6">
+            <div class="card hovercard">
+                <div class="top">
+                    Kinds
+                </div>
+                <div class="cardheader green">
+                    <div class="info">
+
+                    </div>
+                </div>
+                <div class="info">
+                </div>
+                <div class="bottom">
+                    <a class="game btn btn-primary btn-twitter btn-sm" href=<%= games_kinds_path %>>
+                        Enter
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="card hovercard">
+                <div class="top">
+                    Randon
+                </div>
+                <div class="cardheader red">
+                    <div class="info">
+
+                    </div>
+                </div>
+                <div class="info">
+                </div>
+                <div class="bottom">
+                    <a class="game btn btn-primary btn-twitter btn-sm" href=<%= games_random_path %>>
+                        Enter
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-    <hr>
-    <!-- Pagination -->
-    <%= render partial: 'pagination/pagination', locals: {objects: @cards} %>
-    <!-- /.row -->
 
-    <hr>
 
     <!-- Footer -->
     <footer>

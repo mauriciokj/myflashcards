@@ -16,6 +16,7 @@
           <i class="fa fa-check fa-4x iconcolor-right"></i>
         <% else %>
           <i class="fa fa-times fa-4x iconcolor-error"></i>
+          <%= link_to 'Try Again', game_simple_path(@card.id) %>
         <% end %>
         <div class="info">
           <div class="title">

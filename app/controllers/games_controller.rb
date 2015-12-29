@@ -2,8 +2,18 @@ class GamesController < ApplicationController
   before_action :authenticate_user!
   before_filter :load_card, only: [:simple, :multiple, :answer]
 
-  def index
-    @cards = current_user.cards.paginate(:page => params[:page], :per_page => per_page).order(:kind_id, :id)
+  def kinds
+    @kinds = current_user.kinds.paginate(:page => params[:page], :per_page => per_page).order(:id)
+  end
+
+  def cards
+    @cards = current_user.cards.where(kind: params[:id]).paginate(:page => params[:page], :per_page => per_page).order(:kind_id, :id)
+  end
+
+  def random
+    @card = current_user.cards.find(current_user.cards.sample)
+    @card.increase_number_of_times_played
+    render  "simple"
   end
 
   def simple

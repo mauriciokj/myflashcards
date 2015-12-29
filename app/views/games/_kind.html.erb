@@ -1,0 +1,16 @@
+<div class="col-lg-3 col-sm-6">
+    <div class="card hovercard">
+        <div class="top">
+            <%= kind.name %>
+        </div>
+        <div class="cardheader <%= kind.color %>">
+            <div class="info"></div>
+        </div>
+        <div class="info"></div>
+        <div class="bottom">
+            <a class="game btn btn-primary btn-twitter btn-sm" href=<%= games_cards_path(kind.id) %>>
+                Enter
+            </a>
+        </div>
+    </div>
+</div>
